@@ -19,7 +19,7 @@ public class ParallaxExpandableListView extends ExpandableListView {
 		init(context, attrs);
 	}
 
-	protected void init(Context context, AttributeSet attrs) {
+	public void init(Context context, AttributeSet attrs) {
 		helper = new ParallaxListViewHelper(context, attrs, this);
 		super.setOnScrollListener(helper);
 	}
