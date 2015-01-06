@@ -23,7 +23,7 @@ public class ParallaxListViewHelper implements OnScrollListener {
 	private OnScrollListener listener = null;
 	private ListView listView;
 
-	protected ParallaxListViewHelper(Context context, AttributeSet attrs, ListView listView) {
+	public ParallaxListViewHelper(Context context, AttributeSet attrs, ListView listView) {
 		init(context, attrs, listView);
 	}
 
