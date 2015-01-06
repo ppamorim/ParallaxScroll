@@ -23,11 +23,11 @@ public class ParallaxListViewHelper implements OnScrollListener {
 	private OnScrollListener listener = null;
 	private ListView listView;
 
-	protected ParallaxListViewHelper(Context context, AttributeSet attrs, ListView listView) {
+	public ParallaxListViewHelper(Context context, AttributeSet attrs, ListView listView) {
 		init(context, attrs, listView);
 	}
 
-	protected void init(Context context, AttributeSet attrs, ListView listView) {
+	public void init(Context context, AttributeSet attrs, ListView listView) {
 		this.listView = listView;
 		TypedArray typeArray = context.obtainStyledAttributes(attrs, R.styleable.ParallaxScroll);
 		this.parallaxFactor = typeArray.getFloat(R.styleable.ParallaxScroll_parallax_factor, DEFAULT_PARALLAX_FACTOR);
@@ -36,23 +36,23 @@ public class ParallaxListViewHelper implements OnScrollListener {
 		typeArray.recycle();
 	}
 
-	protected void setOnScrollListener(OnScrollListener l) {
+	public void setOnScrollListener(OnScrollListener l) {
 		this.listener = l;
 	}
 	
-	protected void addParallaxedHeaderView(View v) {
+	public void addParallaxedHeaderView(View v) {
 		addParallaxedView(v);
 	}
 
-	protected void addParallaxedHeaderView(View v, Object data, boolean isSelectable) {
+	public void addParallaxedHeaderView(View v, Object data, boolean isSelectable) {
 		addParallaxedView(v);
 	}
 
-	protected void addParallaxedView(View v) {
+	public void addParallaxedView(View v) {
 		this.parallaxedView = new ListViewParallaxedItem(v);
 	}
 
-	protected void parallaxScroll() {
+	public void parallaxScroll() {
 		if (isCircular)
 			circularParallax();
 		else
@@ -120,7 +120,7 @@ public class ParallaxListViewHelper implements OnScrollListener {
 			this.listener.onScrollStateChanged(view, scrollState);
 	}
 	
-	protected class ListViewParallaxedItem extends ParallaxedView {
+	public class ListViewParallaxedItem extends ParallaxedView {
 
 		public ListViewParallaxedItem(View view) {
 			super(view);
